@@ -1,13 +1,14 @@
 (ns climp.parser.combinators-test
   (:use midje.sweet)
-  (:require [climp.parser.combinators :refer :all]
-            [climp.parser.lexer :refer [tokenize]]))
+  (:require [climp.combinators :refer :all]
+            [climp.lexer :refer [tokenize]]))
 
 (def token-types [[#"^[ \n\t]+" nil]
                   [#"^[0-9]+" :int]
+                  [#"^[A-Za-z][A-Za-z-]*" :id]
                   [#"^\+" :reserved]
-                  [#"^\-" :reserved]
-                  ])
+                  [#"^\-" :reserved]])
+
 
 (def parse #(tokenize % token-types))
 
@@ -19,8 +20,6 @@
 
 
 (facts "about `tag`"
-       ((tag :int) [["123" :int]]) => "123"
+       ((tag :int) (parse "123")) => ["123" nil]
        ((tag :int) [["asdf" :string]]) => nil
-       ((tag :string) [["asdf" :string]]) => "asdf")
-
-
+       ((tag :id) (parse "asdf")) => ["asdf" nil])

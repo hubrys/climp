@@ -1,4 +1,4 @@
-(ns climp.parser.lexer)
+(ns climp.lexer)
 
 (defn- next-token
   [input token-types]
@@ -16,7 +16,8 @@
      (let [token (next-token input token-types)]
        (if (nil? token)
          (throw (Exception. "Could not tokenize"))
-         (recur (subs input (count (first token))) token-types
+         (recur (subs input (count (first token)))
+                token-types
                 (if (nil? (second token))
                   results
                   (conj results token))))))))
