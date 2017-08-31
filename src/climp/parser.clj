@@ -109,7 +109,7 @@
 
 (defn stmt-assign []
   (process (concatenate id (kword ":=") (aexp))
-           #(list :assign-stmt (first %) (nth % 2))))
+           #(list :stmt-assign (first %) (nth % 2))))
 
 (defn stmt-list []
   (expression (stmt) (kword ";") #(list :stmt-compound %2 %3)))
