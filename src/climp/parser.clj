@@ -1,7 +1,7 @@
 (ns climp.parser
   (:require [climp.combinators :refer :all]))
 
-(def tokentypes [[#"^[ \n\t]+" nil]
+(def tokentypes [[#"^[ \r\n\t]+" nil]
                  [#"^#[^\n]*" nil]
 
                  [#"^\:=" :reserved]
