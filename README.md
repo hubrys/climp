@@ -1,36 +1,27 @@
 # climp
 
-FIXME: description
+Interpreter for the toy language Imp.  
+The specification for Imp can be found [here](imp-language-blog-post).
 
 ## Installation
 
-Download from http://example.com/FIXME.
+Climp was built using leiningen. Installation instructions can be found [here](leiningen)
 
 ## Usage
 
-FIXME: explanation
+Run using `lein run <path-to-imp-file>`
 
-    $ java -jar climp-0.1.0-standalone.jar [args]
+## Why make this?
 
-## Options
-
-FIXME: listing of options this app accepts.
-
-## Examples
-
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
+- Lisps are awesome
+- Programming languages are awesome
+- I needed a project to get comfortable with Clojure in
 
 ## License
 
-Copyright © 2017 FIXME
+Copyright © 2017 Zachary Smith
 
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+Distributed under the Eclipse Public License version 1.0.
+
+[imp-language-blog-post]: http://jayconrod.com/posts/37/a-simple-interpreter-from-scratch-in-python-part-1
+[leiningen]: https://leiningen.org/

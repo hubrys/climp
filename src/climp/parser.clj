@@ -3,7 +3,6 @@
 
 (def tokentypes [[#"^[ \r\n\t]+" nil]
                  [#"^#[^\n]*" nil]
-
                  [#"^\:=" :reserved]
                  [#"^\(" :reserved]
                  [#"^\)" :reserved]
@@ -27,7 +26,6 @@
                  [#"^while" :reserved]
                  [#"^do" :reserved]
                  [#"^end" :reserved]
-
                  [#"^[0-9]+" :int]
                  [#"^[A-Za-z][A-Za-z-]*" :id]])
 
